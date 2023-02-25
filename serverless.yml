@@ -1,0 +1,102 @@
+
+
+service: notes-api-2
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+
+
+functions:
+  createNotes:
+    handler: handler.createNote
+    environment:
+      NOTES_TABLE_NAME: !Ref notesTablecmbx
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    iamRoleStatements:
+     -  Effect: Allow
+        Action:
+          - dynamodb:PutItem
+        Resource: !GetAtt notesTablecmbx.Arn
+    events:
+    - http:
+        method: post
+        path: notes
+
+  updateNote:
+    handler: handler.updateNote
+    environment:
+      NOTES_TABLE_NAME: !Ref notesTablecmbx
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    iamRoleStatements:
+     -  Effect: Allow
+        Action:
+          - dynamodb:UpdateItem
+        Resource: !GetAtt notesTablecmbx.Arn
+    events:
+    - http:
+        method: put
+        path: notes/{id}
+
+  deleteNote:
+    handler: handler.deleteNote
+    environment:
+      NOTES_TABLE_NAME: !Ref notesTablecmbx
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    iamRoleStatements:
+     -  Effect: Allow
+        Action:
+          - dynamodb:DeleteItem
+        Resource: !GetAtt notesTablecmbx.Arn
+    events:
+    - http:
+        method: delete
+        path: notes/{id}
+  getAllNotes:
+    handler: handler.getAllNotes
+    environment:
+      NOTES_TABLE_NAME: !Ref notesTablecmbx
+      AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    iamRoleStatements:
+     -  Effect: Allow
+        Action:
+          - dynamodb:Scan
+        Resource: !GetAtt notesTablecmbx.Arn
+    events:
+    - http:
+        method: get
+        path: notes
+
+# This is where we configure our resources in cloud formation for our application
+plugins:
+  - serverless-iam-roles-per-function
+resources:
+  Resources:
+    notesTablecmbx: # this is the logical name
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: notes-cmbx
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: notesId
+            AttributeType: S
+        KeySchema: # partition key
+          - AttributeName: notesId
+            KeyType: HASH
+
+        
+
+        
+
+
+
+
+
+
+# In resources we have to give a logical name for our dynamodb table.
+# AttributeDefinitions property:-
+#   A list of attributes that describe the key schema for the table and indexes
+
