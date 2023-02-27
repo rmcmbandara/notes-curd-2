@@ -1,8 +1,9 @@
 # This is thee notes dyanamodb table
 notesTablecmbx: # this is the logical name
   Type: AWS::DynamoDB::Table
+  DeletionPolicy: Retain
   Properties:
-    TableName: notes-cmbx
+    TableName: notes-cmbx-${self:provider.stage}
     BillingMode: PAY_PER_REQUEST
     AttributeDefinitions:
       - AttributeName: notesId
@@ -17,7 +18,7 @@ notesTablecmbx: # this is the logical name
 cognitoUserPool: #Logical name
   Type: AWS::Cognito::UserPool
   Properties: 
-    UserPoolName: MyNotesUp
+    UserPoolName: MyNotesUp-${self:provider.stage}
     
 # User pool web client
 cognitoUserPoolWebClient:
@@ -42,13 +43,13 @@ cognitoUserPoolWebClient:
 cognitorUserPoolDomain: # Logical Name
   Type: AWS::Cognito::UserPoolDomain
   Properties:
-    Domain: cmb
+    Domain: cmb-${self:provider.stage}
     UserPoolId: !Ref cognitoUserPool
 
 #Application parameters
 userPoolIdParams:
   Type: AWS::SSM::Parameter
   Properties: 
-    Name: /notes/dev/userpoolid
+    Name: /notes/${self:provider.stage}/userpoolid
     Type: String
     Value: !GetAtt cognitoUserPool.Arn
