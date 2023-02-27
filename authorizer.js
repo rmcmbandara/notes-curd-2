@@ -1,9 +1,13 @@
 const { CognitoJwtVerifier } = require("aws-jwt-verify");
+const COGNITO_USERPOOL_ID = process.env.COGNITO_USERPOOL_ID
+const COGNITO_WEB_CLIENT_ID = process.env.COGNITO_WEB_CLIENT_ID
+
+
 
 const jwtVerifier = CognitoJwtVerifier.create({
-    userPoolId: "us-east-1_qAN9MfFEG",
+    userPoolId: COGNITO_USERPOOL_ID,
     tokenUse: "id",
-    clientId: "6c2fnnqtl3dma372r5q39jl1ju"
+    clientId: COGNITO_WEB_CLIENT_ID
 })
 
 
@@ -33,6 +37,7 @@ const generatePolicy = (principalId, effect, resource) => {
 exports.handler = async (event, context, callback) => {
     //Lambda authorizer
     var token = event.authorizationToken //allow or deny
+   console.log('--------------');
     console.log(token);
     try {
         const payload = await jwtVerifier.verify(token);
