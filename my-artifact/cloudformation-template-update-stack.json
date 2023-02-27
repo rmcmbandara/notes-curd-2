@@ -185,7 +185,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/notes-api-2/dev/1677497202419-2023-02-27T11:26:42.419Z/notes-api-2.zip"
+          "S3Key": "serverless/notes-api-2/dev/1677500813563-2023-02-27T12:26:53.563Z/notes-api-2.zip"
         },
         "Handler": "authorizer.handler",
         "Runtime": "nodejs14.x",
@@ -220,7 +220,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/notes-api-2/dev/1677497202419-2023-02-27T11:26:42.419Z/notes-api-2.zip"
+          "S3Key": "serverless/notes-api-2/dev/1677500813563-2023-02-27T12:26:53.563Z/notes-api-2.zip"
         },
         "Handler": "handler.createNote",
         "Runtime": "nodejs14.x",
@@ -254,7 +254,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/notes-api-2/dev/1677497202419-2023-02-27T11:26:42.419Z/notes-api-2.zip"
+          "S3Key": "serverless/notes-api-2/dev/1677500813563-2023-02-27T12:26:53.563Z/notes-api-2.zip"
         },
         "Handler": "handler.updateNote",
         "Runtime": "nodejs14.x",
@@ -288,7 +288,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/notes-api-2/dev/1677497202419-2023-02-27T11:26:42.419Z/notes-api-2.zip"
+          "S3Key": "serverless/notes-api-2/dev/1677500813563-2023-02-27T12:26:53.563Z/notes-api-2.zip"
         },
         "Handler": "handler.deleteNote",
         "Runtime": "nodejs14.x",
@@ -322,7 +322,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/notes-api-2/dev/1677497202419-2023-02-27T11:26:42.419Z/notes-api-2.zip"
+          "S3Key": "serverless/notes-api-2/dev/1677500813563-2023-02-27T12:26:53.563Z/notes-api-2.zip"
         },
         "Handler": "handler.getAllNotes",
         "Runtime": "nodejs14.x",
@@ -349,54 +349,54 @@
         "GetAllNotesLogGroup"
       ]
     },
-    "AuthorizerLambdaVersionI0eVEixqrZIgXx9t4rHtVqXigjvLhjbxztLe5eOWI": {
+    "AuthorizerLambdaVersionbw97PNT97FvBmy7cwLIT2DL0rPYpwShcSX2MoHU0A": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthorizerLambdaFunction"
         },
-        "CodeSha256": "bwuGl/Onn5BIUHV2fBiVow4B4UI4wqZnstQgcmZxDa4="
+        "CodeSha256": "2C9LTTpDLY2L3MIE5Cc00oGoKwjNFMzUOMkq/8tINTg="
       }
     },
-    "CreateNotesLambdaVersionlIqpyVSiOak6AMlJvQU6N9bbjEbQeWr3TBIDm1cQc": {
+    "CreateNotesLambdaVersion5icMy9vD3aniYDqcIokCTkeaBqUmJuF6QHiXd8l1nUQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateNotesLambdaFunction"
         },
-        "CodeSha256": "bwuGl/Onn5BIUHV2fBiVow4B4UI4wqZnstQgcmZxDa4="
+        "CodeSha256": "2C9LTTpDLY2L3MIE5Cc00oGoKwjNFMzUOMkq/8tINTg="
       }
     },
-    "UpdateNoteLambdaVersionZRllEBnwyFDVnDWsLsH6T3xwC5bcB7HXAJqF9P8HDg": {
+    "UpdateNoteLambdaVersionkpxsFtiWFakiOcXablCokuTmbQVS8rm4bumVuge8hQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateNoteLambdaFunction"
         },
-        "CodeSha256": "bwuGl/Onn5BIUHV2fBiVow4B4UI4wqZnstQgcmZxDa4="
+        "CodeSha256": "2C9LTTpDLY2L3MIE5Cc00oGoKwjNFMzUOMkq/8tINTg="
       }
     },
-    "DeleteNoteLambdaVersion59cQdKcqSIACYgpGJy6G2SRk7ERLuDTEnv2GSarKNk": {
+    "DeleteNoteLambdaVersionEI7BphEY3Zg1Cqev58VNxTTwkM770wQnvriI1eT5YE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteNoteLambdaFunction"
         },
-        "CodeSha256": "bwuGl/Onn5BIUHV2fBiVow4B4UI4wqZnstQgcmZxDa4="
+        "CodeSha256": "2C9LTTpDLY2L3MIE5Cc00oGoKwjNFMzUOMkq/8tINTg="
       }
     },
-    "GetAllNotesLambdaVersionu7RYrRpYQ7Jf4t1vknLFyFgdiwVsLadiTyWhez02CM": {
+    "GetAllNotesLambdaVersionvP63yNKUO4kA5rhBTEaOFrYmiO2awf7fjJfbqESbt0g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllNotesLambdaFunction"
         },
-        "CodeSha256": "bwuGl/Onn5BIUHV2fBiVow4B4UI4wqZnstQgcmZxDa4="
+        "CodeSha256": "2C9LTTpDLY2L3MIE5Cc00oGoKwjNFMzUOMkq/8tINTg="
       }
     },
     "ApiGatewayRestApi": {
@@ -680,7 +680,7 @@
         ]
       }
     },
-    "ApiGatewayDeployment1677497198887": {
+    "ApiGatewayDeployment1677500810463": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1290,7 +1290,7 @@
     "AuthorizerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthorizerLambdaVersionI0eVEixqrZIgXx9t4rHtVqXigjvLhjbxztLe5eOWI"
+        "Ref": "AuthorizerLambdaVersionbw97PNT97FvBmy7cwLIT2DL0rPYpwShcSX2MoHU0A"
       },
       "Export": {
         "Name": "sls-notes-api-2-dev-AuthorizerLambdaFunctionQualifiedArn"
@@ -1299,7 +1299,7 @@
     "CreateNotesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateNotesLambdaVersionlIqpyVSiOak6AMlJvQU6N9bbjEbQeWr3TBIDm1cQc"
+        "Ref": "CreateNotesLambdaVersion5icMy9vD3aniYDqcIokCTkeaBqUmJuF6QHiXd8l1nUQ"
       },
       "Export": {
         "Name": "sls-notes-api-2-dev-CreateNotesLambdaFunctionQualifiedArn"
@@ -1308,7 +1308,7 @@
     "UpdateNoteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateNoteLambdaVersionZRllEBnwyFDVnDWsLsH6T3xwC5bcB7HXAJqF9P8HDg"
+        "Ref": "UpdateNoteLambdaVersionkpxsFtiWFakiOcXablCokuTmbQVS8rm4bumVuge8hQ"
       },
       "Export": {
         "Name": "sls-notes-api-2-dev-UpdateNoteLambdaFunctionQualifiedArn"
@@ -1317,7 +1317,7 @@
     "DeleteNoteLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteNoteLambdaVersion59cQdKcqSIACYgpGJy6G2SRk7ERLuDTEnv2GSarKNk"
+        "Ref": "DeleteNoteLambdaVersionEI7BphEY3Zg1Cqev58VNxTTwkM770wQnvriI1eT5YE"
       },
       "Export": {
         "Name": "sls-notes-api-2-dev-DeleteNoteLambdaFunctionQualifiedArn"
@@ -1326,7 +1326,7 @@
     "GetAllNotesLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllNotesLambdaVersionu7RYrRpYQ7Jf4t1vknLFyFgdiwVsLadiTyWhez02CM"
+        "Ref": "GetAllNotesLambdaVersionvP63yNKUO4kA5rhBTEaOFrYmiO2awf7fjJfbqESbt0g"
       },
       "Export": {
         "Name": "sls-notes-api-2-dev-GetAllNotesLambdaFunctionQualifiedArn"
