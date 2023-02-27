@@ -5,7 +5,7 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs14.x
   stage: dev
   region: us-east-1
 
@@ -13,6 +13,9 @@ provider:
 functions:
   authorizer:
     handler: authorizer.handler
+    environment:
+      COGNITO_USERPOOL_ID: !Ref cognitoUserPool
+      COGNITO_WEB_CLIENT_ID: !Ref cognitoUserPoolWebClient
 
   createNotes:
     handler: handler.createNote
@@ -76,24 +79,17 @@ functions:
     - http:
         method: get
         path: notes
-        authorizer: authorizer
-
+        authorizer: 
+          name: myNotesUserPoolAuthorizer
+          type: COGNITO_USER_POOLS
+          arn: !GetAtt cognitoUserPool.Arn
 # This is where we configure our resources in cloud formation for our application
 plugins:
   - serverless-iam-roles-per-function
 resources:
   Resources:
-    notesTablecmbx: # this is the logical name
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: notes-cmbx
-        BillingMode: PAY_PER_REQUEST
-        AttributeDefinitions:
-          - AttributeName: notesId
-            AttributeType: S
-        KeySchema: # partition key
-          - AttributeName: notesId
-            KeyType: HASH
+    ${file(resources.yml)}
+
 
         
 
